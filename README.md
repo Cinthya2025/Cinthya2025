@@ -5,12 +5,22 @@
 
 Here are some ideas to get you started:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+graph TD
+    A[Inicio: Registro en formulario de aplicación] --> B{Examen de admisión};
+    B --> C{¿Dentro de los 15 primeros por especialidad?};
+    C -- Sí --> D[Confirmación de participación y envío de documentos];
+    C -- No --> E[Fin: No admitido];
+    D --> F{¿Confirma participación?};
+    F -- Sí --> G[Envío de documentos];
+    F -- No --> H[Fin: No lleva el curso];
+    G --> I{¿Documentos conformes?};
+    I -- Sí --> J[Becario];
+    I -- No --> K[Retiro del curso y llamado a accesitarios];
+    K --> D;
+    J --> L[Desarrollo del curso de extensión];
+    L --> M[Finalización del curso];
+    M --> N[Base de datos de becarios];
+    N --> O[Remisión de información a Recursos Humanos];
+    O --> P[Fin: Contacto con becarios];
+    E --> Q[Fin del proceso];
+    H --> Q;
